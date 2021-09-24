@@ -1,4 +1,5 @@
-import get_vlille_data, get_veloV_data, get_veloRennes_data, get_velib_data
+import map_vlille_data, map_veloV_data, map_veloRennes_data, map_velib_data
+from get_velo import get_velo
 
 from pymongo import MongoClient
 from dotenv import load_dotenv
@@ -6,7 +7,7 @@ import os
 
 # Déclaration des villes avec des vélos
 villes = ["Lille", "Paris", "Lyon", "Rennes"]
-getFiles = [get_vlille_data, get_velib_data, get_veloV_data, get_veloRennes_data]
+getMapping = [map_vlille_data,  map_velib_data, map_veloV_data, map_veloRennes_data]
 
 # Paramétrage du client pour insertion en base de données
 load_dotenv()
@@ -30,7 +31,7 @@ print(stations)
 # On parcourt les différentes villes pour mettre à jour la base de données
 for index, ville in enumerate(villes) :
     print(f"\n\n****************************************** {ville} ******************************************")
-    response = getFiles[index].get_velo() 
+    response = get_velo(ville, getMapping[index].map_stations_data)
     print(f"Nombre de stations : {len(response)}")
     print(response)
 

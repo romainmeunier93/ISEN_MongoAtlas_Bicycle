@@ -16,7 +16,7 @@ def find_station_by_name(collection):
 
     stations = list(query_result)
 
-    print(stations)
+    # print(stations)
 
     print("Voici le résultat de votre recherche")
 

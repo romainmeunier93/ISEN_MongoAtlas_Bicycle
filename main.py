@@ -6,6 +6,7 @@ import os
 from update_delete import update_delete
 from  ratio import ratio 
 from find_station_by_name import find_station_by_name
+from deactivate_all_stations_in_area import deactivate_stations_in_area
 
 ##### Mango Client 
 load_dotenv()
@@ -33,9 +34,8 @@ while CONTINUE :
         find_station_by_name(stations)
     elif choix == 2 :
         update_delete(stations)
-
     elif choix == 3 :
-        print("toto")
+        deactivate_stations_in_area(stations)
     elif choix == 4 :
         ratio(stations_data)
 

@@ -4,6 +4,8 @@
 
 Main file : StoreAllStations.py
 
+Needed files : map_vlille_data.py, map_veloV_data.py, map_veloRennes_data.py, map_velib_data.py, get_velo.py, cities_uris.json
+
 ## Question 2
 
 Main file : refresh_worker.py
